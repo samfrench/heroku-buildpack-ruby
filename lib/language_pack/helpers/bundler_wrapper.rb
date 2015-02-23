@@ -35,6 +35,14 @@ class LanguagePack::Helpers::BundlerWrapper
     self
   end
 
+  def exec
+    ENV['BUNDLE_GEMFILE'] = "Gemfile"
+    fetch_bundler
+    $LOAD_PATH << @path
+    require "bundler"
+    self
+  end
+
   def clean
     ENV['BUNDLE_GEMFILE'] = @orig_bundle_gemfile
     FileUtils.remove_entry_secure(bundler_path) if Dir.exist?(bundler_path)
