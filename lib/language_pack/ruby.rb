@@ -548,11 +548,8 @@ WARNING
           bundler_path   = "#{pwd}/#{slug_vendor_base}/gems/#{BUNDLER_GEM_PATH}/lib"
           # we need to set BUNDLE_CONFIG and BUNDLE_GEMFILE for
           # codon since it uses bundler.
-          puts "ABC"
-          puts "#{pwd}"
-          puts "#{ENV['BUNDLE_GEMFILE']}"
           env_vars       = {
-            "BUNDLE_GEMFILE"                => "#{pwd}/src/Gemfile",
+            "BUNDLE_GEMFILE"                => "#{pwd}/#{ENV['BUNDLE_GEMFILE']}",
             "BUNDLE_CONFIG"                 => "#{pwd}/.bundle/config",
             "CPATH"                         => noshellescape("#{yaml_include}:$CPATH"),
             "CPPATH"                        => noshellescape("#{yaml_include}:$CPPATH"),
