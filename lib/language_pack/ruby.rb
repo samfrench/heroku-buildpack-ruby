@@ -528,7 +528,7 @@ WARNING
           File.unlink("Gemfile.lock")
         else
           # using --deployment is preferred if we can
-          # bundle_command += " --deployment"
+          bundle_command += " --no-deployment"
           cache.load ".bundle"
         end
 
