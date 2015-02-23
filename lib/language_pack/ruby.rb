@@ -559,8 +559,8 @@ WARNING
           }
 
           puts "Updating dependencies..."
-          FileUtils.cp("../tmps/Gemfile", "#{pwd}/src/")
-          FileUtils.cp("../tmps/Gemfile.lock", "#{pwd}/src/")
+          FileUtils.cp("../../tmps/Gemfile", "#{pwd}/src/")
+          FileUtils.cp("../../tmps/Gemfile.lock", "#{pwd}/src/")
 
           env_vars["BUNDLER_LIB_PATH"] = "#{bundler_path}" if ruby_version.ruby_version == "1.8.7"
           puts "Running: #{bundle_command}"
