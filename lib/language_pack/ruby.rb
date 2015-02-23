@@ -511,7 +511,7 @@ WARNING
     instrument 'ruby.build_bundler' do
       log("bundle") do
         bundle_without = env("BUNDLE_WITHOUT") || "development:test"
-        bundle_bin     = "cd #{ENV['APP_SUBDIR']} && bundle"
+        bundle_bin     = "cd src && bundle"
         bundle_command = "#{bundle_bin} install --without #{bundle_without} --path vendor/bundle --binstubs #{bundler_binstubs_path}"
         bundle_command << " -j4"
 
