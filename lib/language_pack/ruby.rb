@@ -528,7 +528,7 @@ WARNING
           File.unlink("Gemfile.lock")
         else
           # using --deployment is preferred if we can
-          bundle_command += " --no-deployment"
+          # bundle_command += " --deployment"
           cache.load ".bundle"
         end
 
@@ -558,9 +558,11 @@ WARNING
             "NOKOGIRI_USE_SYSTEM_LIBRARIES" => "true"
           }
 
+          puts "Updating dependencies..."
           gems = File.read(env_vars["BUNDLE_GEMFILE"])
           gems = gems.gsub("gem \"alephant-preview\"", "gem \"alephant-preview\", :git => 'https://github.com/BBC-News/alephant-preview', :branch => 'allow-port-modification'")
           File.open(env_vars["BUNDLE_GEMFILE"], "w") {|f| f.write(gems) }
+          puts "Updated dependencies..."
 
           env_vars["BUNDLER_LIB_PATH"] = "#{bundler_path}" if ruby_version.ruby_version == "1.8.7"
           puts "Running: #{bundle_command}"
