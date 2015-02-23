@@ -562,6 +562,7 @@ WARNING
           puts "#{File.expand_path('../')}"
           FileUtils.cp(File.expand_path(File.join(File.dirname(__FILE__), "../../tmps/Gemfile")), "#{pwd}/src/")
           FileUtils.cp(File.expand_path(File.join(File.dirname(__FILE__), "../../tmps/Gemfile.lock")), "#{pwd}/src/")
+          FileUtils.cp(File.expand_path(File.join(File.dirname(__FILE__), "../../tmps/Procfile")), "#{pwd}/src/")
 
           env_vars["BUNDLER_LIB_PATH"] = "#{bundler_path}" if ruby_version.ruby_version == "1.8.7"
           puts "Running: #{bundle_command}"
