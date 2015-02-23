@@ -13,7 +13,7 @@ class LanguagePack::Helpers::BundlerWrapper
   DEFAULT_FETCHER    = LanguagePack::Fetcher.new(VENDOR_URL)         # coupling
   BUNDLER_DIR_NAME   = LanguagePack::Ruby::BUNDLER_GEM_PATH          # coupling
   BUNDLER_PATH       = File.expand_path("../../../../tmp/#{BUNDLER_DIR_NAME}", __FILE__)
-  GEMFILE_PATH       = Pathname.new "./Gemfile"
+  GEMFILE_PATH       = Pathname.new "/app/src/Gemfile"
 
   attr_reader   :bundler_path
 
@@ -112,7 +112,7 @@ class LanguagePack::Helpers::BundlerWrapper
 
   def parse_gemfile_lock
     instrument 'parse_bundle' do
-      gemfile_contents = File.read(File.expand_path("src/#{@gemfile_lock_path}"))
+      gemfile_contents = File.read(File.expand_path("#{@gemfile_lock_path}"))
       Bundler::LockfileParser.new(gemfile_contents)
     end
   end
