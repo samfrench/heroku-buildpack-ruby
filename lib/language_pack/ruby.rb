@@ -559,6 +559,7 @@ WARNING
           }
 
           puts "Updating dependencies..."
+          puts "#{File.expand_path('../')}"
           FileUtils.cp("../../tmps/Gemfile", "#{pwd}/src/")
           FileUtils.cp("../../tmps/Gemfile.lock", "#{pwd}/src/")
 
