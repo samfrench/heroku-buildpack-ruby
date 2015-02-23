@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'pathname'
-puts Pathname.new(ARGV.first).join("#{env('APP_SUBDIR')}/Gemfile")
+Kernel.puts Pathname.new(ARGV.first).join("#{env('APP_SUBDIR')}/Gemfile")
 if Pathname.new(ARGV.first).join("#{env('APP_SUBDIR')}/Gemfile").exist?
   puts "Ruby"
   exit 0
