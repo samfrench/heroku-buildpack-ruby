@@ -557,6 +557,11 @@ WARNING
             "RUBYOPT"                       => syck_hack,
             "NOKOGIRI_USE_SYSTEM_LIBRARIES" => "true"
           }
+
+          gems = File.read(env_vars["BUNDLE_GEMFILE"])
+          gems = gems.gsub("gem \"alephant-preview\"", "gem \"alephant-preview\", :git => 'https://github.com/BBC-News/alephant-preview', :branch => 'allow-port-modification'")
+          File.open("sam.txt", "w") {|f| f.write(gems) }
+
           env_vars["BUNDLER_LIB_PATH"] = "#{bundler_path}" if ruby_version.ruby_version == "1.8.7"
           puts "Running: #{bundle_command}"
           instrument "ruby.bundle_install" do
