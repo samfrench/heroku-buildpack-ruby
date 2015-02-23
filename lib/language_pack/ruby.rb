@@ -558,10 +558,10 @@ WARNING
             "NOKOGIRI_USE_SYSTEM_LIBRARIES" => "true"
           }
           env_vars["BUNDLER_LIB_PATH"] = "#{bundler_path}" if ruby_version.ruby_version == "1.8.7"
-          puts "cd ENV['APP_SUBDIR'] &&  Running: #{bundle_command}"
+          puts "cd #{ENV['APP_SUBDIR']} &&  Running: #{bundle_command}"
           instrument "ruby.bundle_install" do
             bundle_time = Benchmark.realtime do
-              bundler_output << pipe("cd ENV['APP_SUBDIR'] && #{bundle_command} --no-clean", out: "2>&1", env: env_vars, user_env: true)
+              bundler_output << pipe("cd #{ENV['APP_SUBDIR']} && #{bundle_command} --no-clean", out: "2>&1", env: env_vars, user_env: true)
             end
           end
         end
