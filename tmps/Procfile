@@ -1,1 +1,1 @@
-web: sh -c 'cd /app/src && bundle exec alephant-preview'
+web: sh -c 'bundle exec alephant-preview'
