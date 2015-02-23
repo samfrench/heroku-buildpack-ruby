@@ -7,5 +7,5 @@ if Pathname.new(ARGV.first).join("Gemfile").exist?
   exit 0
 else
   puts "no"
-  exit 1
+  exit 0
 end
