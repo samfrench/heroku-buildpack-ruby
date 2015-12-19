@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "aws-sdk"
-gem "alephant-logger"
+gem "alephant-logger", "1.2.0"
 gem "alephant-publisher-queue"
 gem "dotenv"
 gem "bbc-cosmos-config"
@@ -13,6 +13,10 @@ gem "spoon"
 group :test do
   gem "rspec"
   gem "rack-test"
+  gem "faraday"
+  gem "json-schema"
+  gem "nokogiri"
+  gem "json"
 end
 
 group :development do
