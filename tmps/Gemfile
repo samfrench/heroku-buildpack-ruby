@@ -25,7 +25,6 @@ group :development do
   gem "spurious-ruby-awssdk-helper"
   gem "spurious"
   gem "alephant-preview", :git => 'https://github.com/BBC-News/alephant-preview', :branch => 'allow-port-modification'
-  gem "rake"
   gem "guard"
   gem "guard-rspec"
   gem "rspec-nc"

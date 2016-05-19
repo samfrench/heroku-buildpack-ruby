@@ -232,7 +232,6 @@ DEPENDENCIES
   pry-nav
   pry-remote
   rack-test
-  rake
   rspec
   rspec-nc
   spoon
