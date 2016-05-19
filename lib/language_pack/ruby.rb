@@ -549,7 +549,7 @@ WARNING
           # we need to set BUNDLE_CONFIG and BUNDLE_GEMFILE for
           # codon since it uses bundler.
           env_vars       = {
-            "BUNDLE_GEMFILE"                => "#{pwd}/src/Gemfile",
+            "BUNDLE_GEMFILE"                => "#{pwd}/Gemfile",
             "BUNDLE_CONFIG"                 => "#{pwd}/.bundle/config",
             "CPATH"                         => noshellescape("#{yaml_include}:$CPATH"),
             "CPPATH"                        => noshellescape("#{yaml_include}:$CPPATH"),
@@ -558,8 +558,8 @@ WARNING
             "NOKOGIRI_USE_SYSTEM_LIBRARIES" => "true"
           }
 
-          FileUtils.cp(File.expand_path(File.join(File.dirname(__FILE__), "../../tmps/Gemfile")), "#{pwd}/src/")
-          FileUtils.cp(File.expand_path(File.join(File.dirname(__FILE__), "../../tmps/Gemfile.lock")), "#{pwd}/src/")
+          FileUtils.cp(File.expand_path(File.join(File.dirname(__FILE__), "../../tmps/Gemfile")), "#{pwd}/")
+          FileUtils.cp(File.expand_path(File.join(File.dirname(__FILE__), "../../tmps/Gemfile.lock")), "#{pwd}/")
           FileUtils.cp(File.expand_path(File.join(File.dirname(__FILE__), "../../tmps/Procfile")), "#{pwd}/")
 
           env_vars["BUNDLER_LIB_PATH"] = "#{bundler_path}" if ruby_version.ruby_version == "1.8.7"
