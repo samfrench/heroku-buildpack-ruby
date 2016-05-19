@@ -10,6 +10,7 @@ gem "htmlentities"
 gem "alephant-harness"
 gem "dim"
 gem "spoon"
+gem "listen", "~> 3.0.0"
 
 group :test do
   gem "rspec"
