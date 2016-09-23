@@ -1,39 +1,43 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "aws-sdk"
-gem "alephant-logger"
-gem "alephant-logger-cloudwatch"
-gem "alephant-publisher-queue"
-gem "dotenv"
-gem "bbc-cosmos-config"
-gem "htmlentities"
-gem "alephant-harness"
-gem "dim"
-gem "spoon"
-gem "listen", "~> 3.0.0"
+gem 'aws-sdk'
+gem 'alephant-logger'
+gem 'alephant-logger-cloudwatch'
+gem 'alephant-publisher-queue'
+gem 'alephant-renderer', '>=3.0.0'
+gem 'dotenv'
+gem 'bbc-cosmos-config'
+gem 'htmlentities'
+gem 'alephant-harness'
+gem 'dim'
+gem 'spoon'
 
 group :test do
-  gem "rspec"
-  gem "rack-test"
-  gem "faraday"
-  gem "json-schema"
-  gem "nokogiri"
-  gem "json"
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'faraday'
+  gem 'json-schema'
+  gem 'nokogiri'
+  gem 'json'
+  gem 'rubocop', '< 0.42.0'
 end
 
 group :development do
-  gem "spurious-ruby-awssdk-helper"
-  gem "spurious"
+  gem 'spurious-ruby-awssdk-helper'
+  gem 'spurious'
   gem "alephant-preview", :git => 'https://github.com/BBC-News/alephant-preview', :branch => 'allow-port-modification'
-  gem "guard"
-  gem "guard-rspec"
-  gem "rspec-nc"
-  gem "pry"
-  gem "pry-remote"
-  gem "pry-nav"
-  gem "yamllint"
+  gem 'rake'
+  gem 'guard'
+  gem 'listen', '<= 3.0.8'
+  # ^ later versions use ruby_dep which doesn't work with our version of jruby, or require a newer version of ruby
+  gem 'guard-rspec'
+  gem 'rspec-nc'
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-nav'
+  gem 'yamllint'
 end
 
 group :deployment do
-  gem "bbc-cosmos-tools"
+  gem 'bbc-cosmos-tools'
 end
